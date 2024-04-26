@@ -44,10 +44,12 @@ ul li a img {
     margin: 0 15px 0 0;
     text-transform: uppercase;
 }
+
 ul>li {
     display: flex;
     align-items: center;
 }
+
 ul li a {
     color: #fff;
 }
