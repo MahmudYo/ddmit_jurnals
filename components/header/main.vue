@@ -19,4 +19,9 @@
     background: url('@/assets/header/flag.jpg') no-repeat center/cover;
     height: 150px;
 }
+
+.header__main-title {
+    padding: 25px 0 0 0;
+}
+
 </style>

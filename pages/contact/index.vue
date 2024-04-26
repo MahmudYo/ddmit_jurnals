@@ -1,12 +1,12 @@
 <template>
     <div>
-        <MainGlobalTitle :title="'Асосӣ'" />
+        <MainGlobalTitle :title="'Тамос'" />
     </div>
 </template>
 
 <script setup>
 useHead({
-    title: 'Асосӣ',
+    title: "Тамос",
 })
 </script>
 

@@ -1,6 +1,7 @@
 <template>
     <div>
         <header>
+            <HeaderTitle />
             <HeaderMain />
             <HeaderNavbar />
         </header>
