@@ -1,17 +1,24 @@
 @font-face {
     font-family: "Banschrift";
     src:
-      url("../header/fonts/BAHNSCHRIFT.TTF") format("ttf")
-  }
+        url("../header/fonts/Bahnschrift.ttf") format("ttf")
+}
+
+* {
+    font-family: 'Banschrift', Arial, Helvetica, sans-serif;
+}
+
 ul,
 li {
     padding: 0;
     margin: 0;
     list-style: none;
 }
+
 a {
     text-decoration: none;
 }
+
 button {
     cursor: pointer;
     background: none;

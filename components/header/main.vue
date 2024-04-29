@@ -22,7 +22,10 @@
 
 .header__main-title {
     padding: 25px 0 0 0;
-    font-family: 'Banschrift', Arial, Helvetica, sans-serif;
 }
-
+.header__main-title h1 {
+    text-transform: uppercase;
+    color: #0A64A4;
+    font-weight: bold;
+}
 </style>
