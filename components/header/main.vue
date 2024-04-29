@@ -22,6 +22,7 @@
 
 .header__main-title {
     padding: 25px 0 0 0;
+    font-family: 'Banschrift', Arial, Helvetica, sans-serif;
 }
 
 </style>

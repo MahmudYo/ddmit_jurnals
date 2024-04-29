@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Banschrift";
+    src:
+      url("../header/fonts/BAHNSCHRIFT.TTF") format("ttf")
+  }
 ul,
 li {
     padding: 0;

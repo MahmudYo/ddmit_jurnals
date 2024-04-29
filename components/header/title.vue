@@ -27,6 +27,7 @@
 </script>
 
 <style scoped>
+
 nav {
     background: #0A64A4;
     padding: 10px 0;
