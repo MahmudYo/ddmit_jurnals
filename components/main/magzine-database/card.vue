@@ -1,5 +1,5 @@
 <template>
-    <div class="magzine-database__card shadow">
+    <div @mouseenter="toggleFunc" class="magzine-database__card shadow">
         <div class="magzine-database__card-img">
             <img src="@/assets/main/magzine-database/book_1.jpg" alt="...">
         </div>
@@ -13,7 +13,9 @@
 </template>
 
 <script setup>
-
+const toggleFunc = (e) => {
+    console.log();
+}
 </script>
 
 <style scoped>

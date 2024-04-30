@@ -1,7 +1,12 @@
 <template>
     <nav>
         <div class="container">
-            <ul class="nav-list">
+            <button @click="toggleNavbar" class="btn btn-nav btn-success">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul ref="nav_list" class="nav-list">
                 <li>
                     <router-link to="/">Асосӣ</router-link>
                 </li>
@@ -26,7 +31,10 @@
 </template>
 
 <script setup>
-
+const nav_list = ref(null);
+const toggleNavbar = () => {
+    nav_list.value.classList.toggle('active')
+}
 </script>
 
 <style scoped>
@@ -36,15 +44,24 @@ a {
 }
 
 nav {
-    background: rgb(0,195,34);
-background: linear-gradient(200deg, rgba(0,195,34,1) 0%, rgba(10,100,164,1) 100%);
-    /* background: rgb(0, 127, 22);
-    background: radial-gradient(circle, rgba(0, 127, 22, 1) 25%, rgba(10, 100, 164, 1) 100%); */
+    background: #00c322;
+    background: linear-gradient(200deg, rgba(0, 195, 34, 1) 0%, rgba(10, 100, 164, 1) 100%);
+}
+
+.nav-list.active {
+    display: block;
+    margin-top: 10px;
+}
+
+.nav-list.active li a {
+    display: block;
 }
 
 .nav-list {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    transition: .5s ease all;
 }
 
 .nav-list li>a {
@@ -59,5 +76,34 @@ background: linear-gradient(200deg, rgba(0,195,34,1) 0%, rgba(10,100,164,1) 100%
 
 .router-link-active {
     background: #03406A;
+}
+
+.btn-nav {
+    width: 45px;
+    height: 45px;
+    display: none;
+}
+
+.btn-nav span {
+    display: block;
+    background: #fff;
+    width: 100%;
+    height: 1px;
+}
+
+@media (max-width: 992px) {
+    nav {
+        padding: 10px 0;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .btn-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
 }
 </style>

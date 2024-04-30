@@ -22,4 +22,16 @@ useHead({
     gap: 30px 20px;
     margin: 2rem 0 2rem 0;
 }
+
+@media (max-width: 992px) {
+    .magzine-database__cards {
+        grid-template: 1fr / repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 442px) {
+    .magzine-database__cards {
+        grid-template: 1fr / repeat(1, 1fr);
+    }
+}
 </style>
