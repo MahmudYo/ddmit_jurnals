@@ -1,5 +1,5 @@
 <template>
-    <div class="magzine-database__card shadow-sm">
+    <div class="magzine-database__card shadow">
         <div class="magzine-database__card-img">
             <img src="@/assets/main/magzine-database/book_1.jpg" alt="...">
         </div>
@@ -33,7 +33,6 @@
 .magzine-database__card-img img {
     object-fit: cover;
     max-width: 60%;
-
 }
 
 

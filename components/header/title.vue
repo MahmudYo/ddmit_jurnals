@@ -3,7 +3,7 @@
         <div class="container">
             <ul>
                 <li>
-                    <a href="">
+                    <a href="http://tgfeu.tj/tj/">
                         <img src="@/assets/header/title/logo-2.png" alt="">
                     </a>
                 </li>
@@ -25,9 +25,8 @@
 </script>
 
 <style scoped>
-
 nav {
-    background: #ccc;
+    background: #fff;
     padding: 10px 0;
 }
 

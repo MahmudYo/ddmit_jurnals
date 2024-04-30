@@ -19,7 +19,7 @@ useHead({
 .magzine-database__cards {
     display: grid;
     grid-template: 1fr / repeat(3, 1fr);
-    gap: 30px 75px;
+    gap: 30px 20px;
     margin: 2rem 0 2rem 0;
 }
 </style>

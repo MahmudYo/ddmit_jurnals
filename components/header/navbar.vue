@@ -30,14 +30,16 @@
 </script>
 
 <style scoped>
-
 a {
     color: #fff;
     padding: 10px 20px;
 }
 
 nav {
-    background: #0A64A4;
+    background: rgb(0,195,34);
+background: linear-gradient(200deg, rgba(0,195,34,1) 0%, rgba(10,100,164,1) 100%);
+    /* background: rgb(0, 127, 22);
+    background: radial-gradient(circle, rgba(0, 127, 22, 1) 25%, rgba(10, 100, 164, 1) 100%); */
 }
 
 .nav-list {

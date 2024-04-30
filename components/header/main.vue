@@ -16,16 +16,17 @@
 
 <style scoped>
 .header__main {
-    background: url('@/assets/header/flag.jpg') no-repeat center/cover;
+    background: url('@/assets/header/main_poster.jpg') no-repeat center/cover;
     height: 150px;
 }
 
 .header__main-title {
-    padding: 25px 0 0 0;
+    padding: 3rem 0 0 0;
 }
+
 .header__main-title h1 {
     text-transform: uppercase;
-    color: #0A64A4;
     font-weight: bold;
+    color: #03899C;
 }
 </style>
