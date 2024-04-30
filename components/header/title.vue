@@ -4,9 +4,7 @@
             <ul>
                 <li>
                     <a href="">
-                        <img src="@/assets/logo.png" alt="">
-                        ДОНИШГОҲИ ДАВЛАТИИ
-                        МОЛИЯ ВА ИҚТИСОД
+                        <img src="@/assets/header/title/logo-2.png" alt="">
                     </a>
                 </li>
                 <li>
@@ -29,7 +27,7 @@
 <style scoped>
 
 nav {
-    background: #0A64A4;
+    background: #ccc;
     padding: 10px 0;
 }
 
@@ -40,7 +38,7 @@ ul {
 }
 
 ul li a img {
-    width: 60px;
+    width: 200px;
     height: 50px;
     margin: 0 15px 0 0;
     text-transform: uppercase;
