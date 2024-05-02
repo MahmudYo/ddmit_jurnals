@@ -1,13 +1,12 @@
 <template>
     <div>
-        <MainGlobalTitle :title="'Тартиби баррасӣ'" />
 
     </div>
 </template>
 
 <script setup>
 useHead({
-    title: 'Тартиби баррасӣ',
+    title: 'Шаҳодатномаи қайди давлатӣ',
 })
 </script>
 

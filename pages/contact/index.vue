@@ -1,6 +1,5 @@
 <template>
     <div>
-        <MainGlobalTitle :title="'Тамос'" />
     </div>
 </template>
 

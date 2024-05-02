@@ -1,6 +1,5 @@
 <template>
     <div>
-        <MainGlobalTitle :title="'Ҳуқуқҳои муалиф'" />
     </div>
 </template>
 
