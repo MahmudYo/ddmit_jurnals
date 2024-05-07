@@ -1,26 +1,21 @@
-@font-face {
-    font-family: "Banschrift";
-    src:
-        url("../header/fonts/Bahnschrift.ttf") format("ttf")
-}
-
-* {
-    font-family: 'Banschrift', Arial, Helvetica, sans-serif;
-}
-
 ul,
 li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
-
+html,
+body,
+#__nuxt {
+  width: 100%;
+  height: 100%;
+}
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 button {
-    cursor: pointer;
-    background: none;
-    border: none;
+  cursor: pointer;
+  background: none;
+  border: none;
 }

@@ -5,7 +5,7 @@
 
 <script setup>
 useHead({
-    title: 'Маҷалла',
+    title: 'Талабот',
 })
 </script>
 
