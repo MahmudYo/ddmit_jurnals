@@ -1,30 +1,28 @@
 <template>
-  <nav>
+  <nav class="bg-mainColor">
     <div class="container">
       <button @click="toggleNavbar" class="btn btn-nav btn-success">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <ul ref="nav_list" class="nav-list">
-        <li>
-          <router-link to="/">Махзани маҷалла</router-link>
-        </li>
-        <li>
-          <router-link to="/passport_country"
-            >Шаҳодатномаи қайди давлатӣ</router-link
-          >
-        </li>
-        <li>
-          <router-link to="/editorial_board">Ҳайати таҳририя</router-link>
-        </li>
-        <li>
-          <router-link to="/requirements">Талабот</router-link>
-        </li>
-        <li>
-          <router-link to="/contact">Тамос</router-link>
-        </li>
-      </ul>
+      <div class="flex justify-between items-center">
+        <ul ref="nav_list" class="nav-list">
+          <li>
+            <router-link to="/">Махзани маҷалла</router-link>
+          </li>
+          <li>
+            <router-link to="/editorial_board">Ҳайати таҳририя</router-link>
+          </li>
+          <li>
+            <router-link to="/requirements">Талабот</router-link>
+          </li>
+          <li>
+            <router-link to="/contact">Тамос</router-link>
+          </li>
+        </ul>
+        <div class="text-2xl text-white">ISSN 2663-0389</div>
+      </div>
     </div>
   </nav>
 </template>
@@ -40,15 +38,6 @@ const toggleNavbar = () => {
 a {
   color: #fff;
   padding: 10px 20px;
-}
-
-nav {
-  background: #00c322;
-  background: linear-gradient(
-    200deg,
-    rgba(0, 195, 34, 1) 0%,
-    rgba(10, 100, 164, 1) 100%
-  );
 }
 
 .nav-list.active {
@@ -74,11 +63,11 @@ nav {
 }
 
 .nav-list li > a:hover {
-  background: #03406a;
+  background: #00a67c;
 }
 
 .router-link-active {
-  background: #03406a;
+  background: #00a67c;
 }
 
 .btn-nav {

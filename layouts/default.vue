@@ -6,6 +6,7 @@
       <HeaderNavbar />
     </header>
     <main class="flex-auto">
+      <UiImage path="assets/main/logo Elibrary.png" />
       <slot />
     </main>
     <footer class="bg-green-800 py-12">
