@@ -1,73 +1,18 @@
+<script setup></script>
 <template>
-  <div class="magzine-database__card">
-    <div class="magzine-database__card-img">
-      <img src="@/assets/main/magzine-database/book_1.jpg" alt="..." />
-      <div class="card-img__buttons">
-        <button class="btn btn-primary"><i class="bi bi-download"></i></button>
-        <button class="btn btn-success"><i class="bi bi-book"></i></button>
+  <a class=" text-mainColor font-bold hover:shadow-lg hover:scale-110 pt-3 mx-14 transition " href="#">
+    <div class="flex flex-col items-center">
+      <div class="w-[175px] relative hover:group-hover:hidden group mb-3">
+        <div
+          class="absolute top-0 left-0 bg-black transition w-full h-full bg-opacity-50 items-center justify-center gap-1 group-hover:flex hidden">
+          <a class="btn btn-primary" href="#"><i class="bi bi-book"></i></a>
+          <a class="btn btn-success" href="#"><i class="bi bi-download"></i></a>
+        </div>
+        <img src="@/assets/main/magzine-database/book_1.jpg" class="w-full h-full" alt="book_1" />
+      </div>
+      <div>
+        <p>Паёми молия ва иқтисод</p>
       </div>
     </div>
-    <div class="magzine-database__card-text text-green-900 font-bold">
-      Паёми молия ва иқтисод <br />
-      1(35) 2023
-    </div>
-  </div>
+  </a>
 </template>
-
-<script setup></script>
-
-<style scoped>
-.magzine-database__card {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 30px 10px;
-  width: 75%;
-  margin: 0 auto;
-  transition: 0.3s ease;
-}
-
-.magzine-database__card:hover {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  transform: scale(1.1);
-}
-
-.magzine-database__card-img {
-  flex: 1 1 40%;
-  display: flex;
-  width: 70%;
-  margin: 0 auto;
-  justify-content: center;
-  background: #000;
-  position: relative;
-}
-
-.card-img__buttons {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: #0000005e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s ease;
-}
-
-.magzine-database__card-img:hover .card-img__buttons {
-  visibility: visible;
-  opacity: 1;
-}
-
-.magzine-database__card-img img {
-  object-fit: cover;
-  width: 100%;
-}
-
-.magzine-database__card-text {
-  flex: 1 1 30%;
-  text-align: center;
-}
-</style>

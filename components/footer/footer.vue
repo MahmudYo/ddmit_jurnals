@@ -1,33 +1,23 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="md:flex md:items-center md:justify-between">
-      <div class="flex justify-center md:order-2">
-        <a
-          href="#"
-          class="text-gray-400 hover:text-white px-3 py-2 text-sm font-medium"
-          >Домашняя</a
-        >
-        <a
-          href="#"
-          class="text-gray-400 hover:text-white px-3 py-2 text-sm font-medium"
-          >О нас</a
-        >
-        <a
-          href="#"
-          class="text-gray-400 hover:text-white px-3 py-2 text-sm font-medium"
-          >Услуги</a
-        >
-        <a
-          href="#"
-          class="text-gray-400 hover:text-white px-3 py-2 text-sm font-medium"
-          >Контакты</a
-        >
+    <div class="md:flex md:items-start md:justify-between">
+      <div>
+        <FooterNavbar />
+        <FooterFriendLogos />
       </div>
-      <div class="mt-8 md:mt-0 md:order-1 flex justify-center md:justify-start">
-        <p class="text-center text-gray-400">
-          &copy; 2024 ПАЁМИ МОЛИЯ ВА ИҚТИСОД. Все права защищены.
-        </p>
+      <div>
+        <FooterCopy />
       </div>
     </div>
   </div>
 </template>
+<style scoped>
+.logo {
+  transition: all ease 0.4s;
+  filter: grayscale(0%);
+}
+
+.logo:hover {
+  filter: grayscale(100%);
+}
+</style>

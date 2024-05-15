@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="container">
-      <div class="magzine-database__cards">
+    <div class="container m-auto">
+      <div class="grid grid-rows-1 max-md:grid-cols-2 max-sm:grid-cols-1 grid-cols-3 gap-5 my-5">
         <MainMagzineDatabaseCard v-for="item in 9" />
       </div>
     </div>
@@ -13,24 +13,3 @@ useHead({
   title: "Махзани маҷалла",
 });
 </script>
-
-<style scoped>
-.magzine-database__cards {
-  display: grid;
-  grid-template: 1fr / repeat(3, 1fr);
-  gap: 30px 0px;
-  margin: 2rem 0 2rem 0;
-}
-
-@media (max-width: 992px) {
-  .magzine-database__cards {
-    grid-template: 1fr / repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 442px) {
-  .magzine-database__cards {
-    grid-template: 1fr / repeat(1, 1fr);
-  }
-}
-</style>
