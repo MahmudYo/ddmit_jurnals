@@ -112,13 +112,7 @@ const dataPositionList = ref([
 </script>
 
 <template>
-  <div>
-    <div class="container m-auto shadow p-5">
-      <MainEditorialBoardPositionsList
-        v-for="item in dataPositionList"
-        :title="item.title"
-        :list="item.list"
-      />
-    </div>
+  <div class="shadow p-5">
+    <MainEditorialBoardPositionsList v-for="item in dataPositionList" :title="item.title" :list="item.list" />
   </div>
 </template>
