@@ -10,12 +10,16 @@
       <div class="bg-gray-100">
         <div class="flex items-start relative">
           <div class="flex-[10%] py-2 px-3 sticky top-0 left-0">
-            <input type="date" class="form-control" />
+            <input
+              v-if="$route.path === `/`"
+              type="date"
+              class="form-control"
+            />
           </div>
-          <div class="container m-auto flex-auto bg-white">
+          <div class="container  bg-white">
             <slot />
           </div>
-          <div class="flex-[10%] sticky top-0 left-0">
+          <div class="flex-[10%] py-2 sticky top-0 left-0">
             <MainFriendLogos />
           </div>
         </div>

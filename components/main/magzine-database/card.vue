@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-  <div class="flex flex-col items-center hover:shadow-lg hover:scale-110 pt-3 mx-14 transition ">
+  <div class="flex flex-col items-center hover:shadow-lg hover:scale-110 pt-3 mx-3   transition ">
     <div class="w-[175px] relative hover:group-hover:hidden group mb-3">
       <div
         class="absolute top-0 left-0 bg-black transition w-full h-full bg-opacity-50 items-center justify-center gap-1 group-hover:flex hidden">
