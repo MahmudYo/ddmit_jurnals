@@ -3,7 +3,6 @@
     <div class="md:flex md:items-start md:justify-between">
       <div>
         <FooterNavbar />
-        <FooterFriendLogos />
       </div>
       <div>
         <FooterCopy />
@@ -11,13 +10,3 @@
     </div>
   </div>
 </template>
-<style scoped>
-.logo {
-  transition: all ease 0.4s;
-  filter: grayscale(0%);
-}
-
-.logo:hover {
-  filter: grayscale(100%);
-}
-</style>

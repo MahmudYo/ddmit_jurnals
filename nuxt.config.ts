@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ["usebootstrap", "@nuxt/ui"],
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
+  },
   ssr: true,
   postcss: {
     plugins: {
