@@ -1,10 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["usebootstrap", "@nuxt/ui"],
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
-  },
   ssr: true,
+  modules: ["usebootstrap", "@nuxt/ui", "@pinia/nuxt"],
+  runtimeConfig: {
+    public: {
+      apiUrl: "http://127.0.0.1:8000/api",
+    },
+  },
   postcss: {
     plugins: {
       tailwindcss: {},

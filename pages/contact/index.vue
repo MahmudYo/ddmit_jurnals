@@ -10,12 +10,12 @@ useHead({
     <div>
       <ul class="mb-3">
         <li class="text-xl text-mainColor font-bold">
-          Сармутахассиси раёсати илм ва инноватсия
+          Худойбердиев Ҷаҳонгир Маҳмуродович
         </li>
-        <li class="text-mainColor">Худойбердиев Ҷаҳонгир Маҳмуродович</li>
+        <li class="text-mainColor">Сармутахассиси раёсати илм ва инноватсия</li>
       </ul>
       <ul class="mb-3">
-        <li>
+        <li class="mb-2">
           <a
             class="text-mainColor hover:text-green-600 transition"
             href="tel:(+992) 001.99.09.05"
@@ -24,14 +24,12 @@ useHead({
             (+992) 001.99.09.05
           </a>
         </li>
-      </ul>
-      <ul class="mb-3">
-        <li>
+        <li class="mb-2">
           <a
             class="text-mainColor hover:text-green-600 transition"
-            href="milto:jaha_1992@list.ru"
+            href="mailto:jaha_1992@list.ru"
           >
-          <i class="bi bi-mailbox"></i>
+          <i class="bi bi-at"></i>
             jaha_1992@list.ru
           </a>
         </li>
