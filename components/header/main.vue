@@ -4,9 +4,15 @@
       <div class="header__main-content">
         <div class="header__main-title">
           <h1
-            class="mb-3 text-5xl max-md:text-2xl max-sm:text-xl text-mainColor uppercase font-bold"
+            class="flex flex-col items-start text-4xl max-md:text-2xl max-sm:text-xl text-mainColor uppercase font-bold"
           >
             Паёми молия ва иқтисод
+            <span class="text-[12px] leading-4 uppercase"
+              >ФИНАНСОВО-ЭКОНОМИЧЕСКИЙ ВЕСТНИК</span
+            >
+            <span class="text-[12px] leading-4 uppercase"
+              >THE FINANCE AND ECONOMIC BULLETIN</span
+            >
           </h1>
         </div>
       </div>
@@ -23,6 +29,6 @@
 }
 
 .header__main-title {
-  padding: 3rem 0 0 0;
+  padding: 2rem 0 0 0;
 }
 </style>

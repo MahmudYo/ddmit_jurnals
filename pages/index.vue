@@ -11,6 +11,13 @@ useHead({
 
 <template>
   <div>
+    <Transition>
+      <div class="mt-5" v-if="!jurnal.isLoading && !jurnal.jurnals.length">
+        <h4 class="text-center text-mainColor">
+          Маълумот ба зудӣ дастрас хоҳад шуд
+        </h4>
+      </div>
+    </Transition>
     <div
       class="grid grid-rows-1 max-md:grid-cols-2 max-sm:grid-cols-1 gap-y-10 grid-cols-4 py-5"
     >
@@ -22,7 +29,7 @@ useHead({
         />
       </TransitionGroup>
     </div>
-    <UiNavPaginate />
+    <UiNavPaginate v-if="jurnal.jurnals.length" />
   </div>
 </template>
 <style scoped>

@@ -6,18 +6,35 @@ const links = ref([
     icon: "bi bi-journal-bookmark",
   },
   {
-    link: "/admin/people",
+    link: "/admin/editing_person",
     label: "Ҳайати таҳририя",
     icon: "bi bi-card-checklist",
   },
 ]);
+const burgerHide = ref(100);
 </script>
 <template>
-  <div class="flex justify-between  flex-col">
+  <div
+    :class="
+      Boolean(burgerHide)
+        ? `max-md:translate-x-[${burgerHide}%]`
+        : `max-md:translate-x-[-100%]`
+    "
+    class="flex relative justify-between transition bg-black max-md:w-1/2 max-sm:w-[80%] max-md:h-screen max-md:fixed max-md:p-5 top-0 left-0 z-50 flex-col"
+  >
     <div>
-      <NuxtLink to="/admin">
-        <h2 class="text-mainColor text-center mb-3">Admin</h2>
-      </NuxtLink>
+      <div class="flex justify-center items-center">
+        <NuxtLink to="/admin">
+          <h2 class="text-mainColor mb-3">Admin</h2>
+        </NuxtLink>
+        <button
+          @click="Boolean(burgerHide) ? (burgerHide = 0) : (burgerHide = 100)"
+          class="max-md:absolute top-[7%] right-[-20%] hidden max-md:block"
+        >
+          burger
+        </button>
+      </div>
+
       <ul class="flex flex-col">
         <li class="mb-3" v-for="item in links">
           <UButton
@@ -52,9 +69,3 @@ const links = ref([
   box-shadow: 0px 0px 7px #00a67c;
 }
 </style>
-<!-- <template #leading>
-            <UAvatar
-              src="https://avatars.githubusercontent.com/u/739984?v=4"
-              size="2xs"
-            />
-          </template> -->

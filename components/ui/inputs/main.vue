@@ -55,7 +55,6 @@ const isShowPassword = () => {
       @change="$emit('Vchange', $event.target.files[0], name)"
       :min="min"
       :max="max"
-
     />
   </lable>
 </template>

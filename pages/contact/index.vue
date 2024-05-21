@@ -10,9 +10,9 @@ useHead({
     <div>
       <ul class="mb-3">
         <li class="text-xl text-mainColor font-bold">
-          Худойбердиев Ҷаҳонгир Маҳмуродович
+          Сармутахассиси раёсати илм ва инноватсия
         </li>
-        <li class="text-mainColor">Сармутахассиси раёсати илм ва инноватсия</li>
+        <li class="text-mainColor">Худойбердиев Ҷаҳонгир Маҳмуродович</li>
       </ul>
       <ul class="mb-3">
         <li class="mb-2">
@@ -29,7 +29,7 @@ useHead({
             class="text-mainColor hover:text-green-600 transition"
             href="mailto:jaha_1992@list.ru"
           >
-          <i class="bi bi-at"></i>
+            <i class="bi bi-at"></i>
             jaha_1992@list.ru
           </a>
         </li>

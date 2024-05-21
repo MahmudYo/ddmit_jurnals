@@ -1,16 +1,17 @@
-
 ul,
 li {
   padding: 0;
   margin: 0;
   list-style: none;
 }
+
 html,
 body,
 #__nuxt {
   width: 100%;
   height: 100%;
 }
+
 a {
   text-decoration: none;
 }
@@ -19,4 +20,15 @@ button {
   cursor: pointer;
   background: none;
   border: none;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
 }

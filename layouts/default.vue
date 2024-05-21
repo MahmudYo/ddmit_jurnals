@@ -1,6 +1,12 @@
-<script setup></script>
+<script setup>
+import { useJurnalStore } from "~/store/Jurnal";
+const jurnal = useJurnalStore();
+onMounted(() => {
+  jurnal.isLoading = false;
+});
+</script>
 <template>
-  <div v-if="!$route.path.startsWith('/admin')" class="flex flex-col h-full">
+  <div v-if="!$route.path.startsWith('/admin')" class="flex flex-col min-h-full">
     <header>
       <HeaderTitle />
       <HeaderMain />
@@ -8,13 +14,18 @@
     </header>
     <main class="flex-auto">
       <div class="bg-gray-100">
-        <div class="flex items-start relative">
-          <div class="flex-[10%] py-2 px-3 sticky top-0 left-0">
+        <div class="flex relative">
+          <div
+            class="flex-[10%] py-2 flex flex-col items-center gap-5 px-3 sticky top-0 left-0"
+          >
             <input
               v-if="$route.path === `/`"
               type="date"
               class="form-control"
             />
+            <Transition>
+              <UiLoading v-if="jurnal.isLoading" />
+            </Transition>
           </div>
           <div class="container bg-white">
             <NuxtPage />

@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        loading: "url('@/assets/loading.gif')",
+      },
       colors: {
         mainColor: "#1F7C65",
         activeColor: "#00A67C",

@@ -10,6 +10,7 @@ const columns = [
   {
     key: "title",
     label: "Title",
+    sortable: true,
   },
   {
     key: "jurnal",
@@ -18,6 +19,7 @@ const columns = [
   {
     key: "year",
     label: "Year",
+    sortable: true,
   },
   {
     key: "image",
@@ -33,17 +35,24 @@ const items = (row) => [
     {
       label: "Edit",
       icon: "i-heroicons-pencil-square-20-solid",
-      click: () => showFormAction("update"),
+      click: () => showFormAction("update", row),
     },
     {
       label: "Delete",
       icon: "i-heroicons-trash-20-solid",
+      click: () => showFormAction("remove", row),
     },
   ],
 ];
-const showFormAction = (formType) => {
+const showFormAction = (formType, row) => {
+  jurnal.formData = {};
   jurnal.formType = formType;
   jurnal.isOpenModal = true;
+  if (row !== undefined) {
+    jurnal.formData.selectData = row;
+    jurnal.formData.title = row.title;
+    jurnal.formData.year = row.year;
+  }
 };
 onMounted(() => {
   jurnal.Index();
@@ -53,6 +62,13 @@ onMounted(() => {
   <NuxtLayout name="admin">
     <div>
       <UModal v-model="jurnal.isOpenModal">
+        <UButton
+          class="hidden max-sm:inline-block max-sm:m-3"
+          @click="jurnal.isOpenModal = false"
+          color="red"
+          variant="ghost"
+          >x</UButton
+        >
         <div class="p-4">
           <AdminFormsJurnal />
         </div>
@@ -63,9 +79,14 @@ onMounted(() => {
       icon="i-heroicons-plus"
       color="primary"
       variant="ghost"
+      block
     />
     <TransitionGroup name="list">
-      <UTable :rows="jurnal.jurnals" :columns="columns">
+      <UTable
+        :loading="jurnal.isLoading"
+        :rows="jurnal.jurnals"
+        :columns="columns"
+      >
         <template #name-data="{ row }">
           <span>{{ row.name }}</span>
         </template>
@@ -86,6 +107,9 @@ onMounted(() => {
           </UDropdown>
         </template>
       </UTable>
+      <div class="flex justify-end my-3 mr-5">
+        <UiNavPaginate />
+      </div>
     </TransitionGroup>
   </NuxtLayout>
 </template>
@@ -97,6 +121,6 @@ onMounted(() => {
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
-  transform: translateX(50px);
+  transform: translateY(100%);
 }
 </style>
