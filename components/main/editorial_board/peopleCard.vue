@@ -1,25 +1,31 @@
 <script setup>
 defineProps({
-  imagePath: String,
-  fullName: String,
-  description: String,
+  persone: Object,
 });
+const config = useRuntimeConfig();
 </script>
 
 <template>
-  <div class="shadow flex m-auto hover:translate-y-[-5px] h-full transition rounded">
+  <div
+    :class="
+      persone.role === 'rector' ? 'bg-teal-500 text-white' : 'bg-green-100 '
+    "
+    class="shadow flex m-auto text-black hover:translate-y-[-5px] h-full transition rounded"
+  >
     <div class="flex-[35%]">
+      <!-- @/assets/cardpeople.jpeg -->
+
       <img
-        src="@/assets/cardpeople.jpeg"
-        class="w-full h-full object-cover "
+        :src="`${config.public.apiUrl}/editing_persons/image/${persone.id}`"
+        class="w-full h-full object-cover"
         alt="image of people"
       />
     </div>
     <div class="p-4 text-center flex-[65%]">
       <div>
-        <h6>{{ fullName }}</h6>
+        <h6>{{ persone.full_name }}</h6>
       </div>
-      <div>{{ description }}</div>
+      <div>{{ persone.description }}</div>
     </div>
   </div>
 </template>

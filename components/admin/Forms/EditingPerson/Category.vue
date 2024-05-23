@@ -20,7 +20,6 @@ const model = (value, name) => {
 
 <template>
   <div>
-    {{ category.rector }}
     <form v-if="jurnal.formType !== 'remove'" @submit.prevent="sendFormData">
       <UiInputsMain
         placeholder="Сармуҳаррир"
