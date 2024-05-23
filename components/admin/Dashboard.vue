@@ -11,7 +11,7 @@ const links = ref([
     icon: "bi bi-card-checklist",
   },
 ]);
-const burgerHide = ref(100);
+const burgerHide = ref(0);
 </script>
 <template>
   <div
@@ -29,9 +29,9 @@ const burgerHide = ref(100);
         </NuxtLink>
         <button
           @click="Boolean(burgerHide) ? (burgerHide = 0) : (burgerHide = 100)"
-          class="max-md:absolute top-[7%] right-[-20%] hidden max-md:block"
+          class="max-md:absolute top-[4%] right-[-15%] hidden max-md:block"
         >
-          burger
+         <i class="bi bi-list text-3xl text-mainColor font-bold"></i>
         </button>
       </div>
 

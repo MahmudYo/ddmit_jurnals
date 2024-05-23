@@ -6,7 +6,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div v-if="!$route.path.startsWith('/admin')" class="flex flex-col min-h-full">
+  <div v-if="!$route.path.startsWith('/admin')" class="flex flex-col relative min-h-full">
     <header>
       <HeaderTitle />
       <HeaderMain />
@@ -14,7 +14,7 @@ onMounted(() => {
     </header>
     <main class="flex-auto">
       <div class="bg-gray-100">
-        <div class="flex relative">
+        <div class="flex  top-0 left-0">
           <div
             class="flex-[10%] py-2 flex flex-col items-center gap-5 px-3 sticky top-0 left-0"
           >

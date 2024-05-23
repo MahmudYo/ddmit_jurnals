@@ -87,7 +87,6 @@ export const useJurnalStore = defineStore("jurnal", {
       for (const key in this.formData) {
         sendFormData.append(key, this.formData[key]);
       }
-      console.log(sendFormData);
       axios
         .post(`${api}/jurnals/${jurnal.id}`, sendFormData, {
           headers: {

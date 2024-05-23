@@ -30,7 +30,7 @@ const isShowPassword = () => {
 <template>
   <h6 v-if="title" class="my-3">{{ title }}</h6>
   <lable class="relative block">
-    <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+    <span class="absolute inset-y-0 top-0 left-0 flex items-center pl-2">
       <i :class="`${icon} text-mainColor`"></i>
     </span>
     <span
@@ -43,6 +43,7 @@ const isShowPassword = () => {
       ></i>
     </span>
     <input
+      v-if="type !== 'textarea'"
       ref="input"
       :required="required"
       class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
@@ -51,10 +52,19 @@ const isShowPassword = () => {
       :name="name"
       :value="value"
       :accept="accept"
-      @input="$emit('model', $event.target.value, name)"
+      @input="$emit('model', String($event.target.value).trim(), name)"
       @change="$emit('Vchange', $event.target.files[0], name)"
       :min="min"
       :max="max"
     />
+    <textarea
+      v-else
+      :name="name"
+      @input="$emit('model', String($event.target.value).trim(), name)"
+      :required="required"
+      :placeholder="placeholder"
+      class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+      >{{ value }}</textarea
+    >
   </lable>
 </template>

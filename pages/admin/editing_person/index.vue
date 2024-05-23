@@ -1,9 +1,55 @@
-<script setup></script>
+<script setup>
+import { useJurnalStore } from "~/store/Jurnal";
+import { editingCategoryStore } from "~/store/EditingPerson";
+const jurnal = useJurnalStore();
+const category = editingCategoryStore();
+const columns = [
+  {
+    key: "id",
+    label: "Id",
+    sortable: true,
+  },
+  {
+    key: "category",
+    label: "Category",
+    sortable: true,
+  },
+  {
+    key: "persons.length",
+    label: "Persons",
+    sortable: true,
+  },
+  {
+    key: "actions",
+  },
+];
+const showFormAction = (formType, row) => {
+  category.formData = {};
+  console.log(formType);
+  jurnal.formType = formType;
+  if (row !== undefined) {
+    category.formData.selectData = row;
+    category.formData.category = row.category;
+  }
+};
+onMounted(() => {
+  category.index();
+});
+</script>
 
 <template>
   <NuxtLayout name="admin">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem in libero
-    ut reprehenderit error accusantium numquam aut quos delectus alias dolore
-    iusto deserunt, atque, laudantium architecto laborum qui eaque similique.
+    <AdminATable
+      :rows="category.category"
+      @showFormAction="showFormAction"
+      :columns="columns"
+      :isWatch="{
+        view: true,
+        isApi: false,
+        icon: 'i-heroicons-link',
+      }"
+    >
+      <template #form><AdminFormsEditingPersonCategory /></template>
+    </AdminATable>
   </NuxtLayout>
 </template>

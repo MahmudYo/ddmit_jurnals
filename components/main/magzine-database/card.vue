@@ -15,18 +15,18 @@ const config = useRuntimeConfig();
         <a
           class="btn btn-primary"
           target="_blank"
-          :href="`${config.public.apiUrl}/jurnals/document/${item.id}/${item.jurnal}`"
+          :href="`${config.public.apiUrl}/jurnals/document/${item.id}`"
           ><i class="bi bi-book"></i
         ></a>
         <a
           class="btn btn-success"
           target="_blank"
-          :href="`${config.public.apiUrl}/jurnals/document/download/${item.id}/${item.jurnal}`"
+          :href="`${config.public.apiUrl}/jurnals/document/download/${item.id}`"
           ><i class="bi bi-download"></i
         ></a>
       </div>
       <img
-        :src="`${config.public.apiUrl}/jurnals/image/${item.id}/${item.image}`"
+        :src="`${config.public.apiUrl}/jurnals/image/${item.id}`"
         class="w-full h-full"
         :alt="`IMAGE ${item.name}`"
       />
