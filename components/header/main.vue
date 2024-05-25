@@ -7,10 +7,10 @@
             class="flex flex-col items-start text-4xl max-md:text-2xl max-sm:text-xl text-mainColor uppercase font-bold"
           >
             Паёми молия ва иқтисод
-            <span class="text-[12px] leading-4 uppercase"
+            <span class="text-[15px] text-gray-900 leading-4 uppercase"
               >ФИНАНСОВО-ЭКОНОМИЧЕСКИЙ ВЕСТНИК</span
             >
-            <span class="text-[12px] leading-4 uppercase"
+            <span class="text-[15px] text-gray-900 leading-4 uppercase"
               >THE FINANCE AND ECONOMIC BULLETIN</span
             >
           </h1>
