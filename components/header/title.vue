@@ -1,3 +1,5 @@
+<script setup></script>
+
 <template>
   <nav>
     <div class="container">
@@ -12,12 +14,7 @@
           </a>
         </div>
         <div class="flex gap-3 items-center">
-          <UiInputsMain
-            type="text"
-            icon="bi bi-search"
-            placeholder="Ҷустуҷӯ..."
-            name="search"
-          />
+          <HeaderSearch />
           <select class="form-select flex-[30%] text-uppercase" name="" id="">
             <option value="tj">tj</option>
             <option value="ru">ru</option>
@@ -28,8 +25,6 @@
     </div>
   </nav>
 </template>
-
-<script setup></script>
 
 <style scoped>
 nav {

@@ -1,7 +1,9 @@
 <script setup>
-import { editingPesonseStore } from "~/store/EditingPerson";
+import {
+  editingPesonseStore,
+  editingCategoryStore,
+} from "~/store/EditingPerson";
 import { useJurnalStore } from "~/store/Jurnal";
-import { editingCategoryStore } from "~/store/EditingPerson";
 const jurnal = useJurnalStore();
 const persone = editingPesonseStore();
 const route = useRoute();

@@ -8,11 +8,13 @@ const config = useRuntimeConfig();
 <template>
   <div
     :class="
-      persone.role === 'rector' ? 'bg-teal-500 text-white' : 'bg-green-100 '
+      persone.role === 'rector'
+        ? 'bg-green-200 text-black'
+        : 'bg-gray-200 '
     "
-    class="shadow flex m-auto text-black hover:translate-y-[-5px] h-full transition rounded"
+    class="shadow flex mb-3 text-black hover:translate-y-[-5px] h-full transition rounded"
   >
-    <div class="flex-[35%]">
+    <div v-if="persone.image" class="flex-[30%]">
       <!-- @/assets/cardpeople.jpeg -->
 
       <img
@@ -21,8 +23,8 @@ const config = useRuntimeConfig();
         alt="image of people"
       />
     </div>
-    <div class="p-4 text-center flex-[65%]">
-      <div>
+    <div class="p-4 text-center flex-[70%]">
+      <div :class="persone.role === 'rector' ? ` uppercase` : 'normal-case'">
         <h6>{{ persone.full_name }}</h6>
       </div>
       <div>{{ persone.description }}</div>

@@ -24,7 +24,7 @@
 
 <style scoped>
 .header__main {
-  background: url("@/assets/header/main_poster.jpg") no-repeat center/cover;
+  background: url("@/assets/header/main_poster.png") no-repeat center/cover;
   height: 150px;
 }
 

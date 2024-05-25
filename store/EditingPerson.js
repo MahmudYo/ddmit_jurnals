@@ -16,12 +16,21 @@ export const editingPesonseStore = defineStore("editing_persone", {
   }),
   actions: {
     index(categoryId) {
+      const category = editingCategoryStore();
+
       if (!this.persone.length) {
         const jurnal = useJurnalStore();
         jurnal.isLoading = true;
         axios
           .get(`${api}/editing_persons/category/${categoryId}`)
           .then((res) => {
+            for (let i = 0; i < category.category.length; i++) {
+              if (category.category[i].id == categoryId) {
+                console.log(category.category[i]);
+                category.category[i].persons = res.data.persone;
+                break;
+              }
+            }
             this.persone = res.data.persone;
           })
           .catch((err) => {
@@ -31,11 +40,12 @@ export const editingPesonseStore = defineStore("editing_persone", {
             jurnal.isLoading = false;
           });
       } else {
-        const category = editingCategoryStore();
         this.persone = category.category.filter((item) => {
-          console.log(item.id, categoryId);
           return +categoryId === item.id; // Добавлено возвращение булевого значения
         })[0].persons;
+        if (this.persone === undefined) {
+          this.persone = [];
+        }
       }
     },
     store() {
@@ -54,12 +64,19 @@ export const editingPesonseStore = defineStore("editing_persone", {
             let progress = (progressEvent.loaded * 100) / progressEvent.total;
             // Переводим байты в килобайты
             const loadedKB = progressEvent.loaded / 1024;
-            this.progress.loading = progress.toFixed(2);
-            this.progress.size = loadedKB.toFixed(2);
+            jurnal.progress.loading = progress.toFixed(2);
+            jurnal.progress.size = loadedKB.toFixed(2);
           },
         })
         .then((res) => {
-          this.persone.push(res.data.persone);
+          const iSfind = this.persone.some((item) => {
+            return item.id === res.data.persone.id;
+          });
+          if (iSfind) {
+            return alert("Ин шахс аллакай вуҷуд дорад");
+          } else {
+            this.persone.push(res.data.persone);
+          }
         })
         .catch((err) => {
           console.log(err);
@@ -119,8 +136,12 @@ export const editingPesonseStore = defineStore("editing_persone", {
     },
     remove(persone, answer) {
       const jurnal = useJurnalStore();
+      const category = editingCategoryStore();
       if (answer) {
         jurnal.isLoading = true;
+        if (persone.role === "rector") {
+          category.rector = null;
+        }
         axios
           .delete(`${api}/editing_persons/${persone.id}`)
           .then((res) => {
@@ -179,7 +200,14 @@ export const editingCategoryStore = defineStore("editing_category", {
       axios
         .post(`${api}/editing_categories`, this.formData)
         .then((res) => {
-          this.category.push(res.data.category);
+          const iSfind = this.category.some((item) => {
+            return item.id === res.data.category.id;
+          });
+          if (iSfind) {
+            return alert("Ин категория аллакай вуҷуд дорад");
+          } else {
+            this.category.push(res.data.category);
+          }
         })
         .catch((err) => {
           console.log(err);
@@ -219,6 +247,7 @@ export const editingCategoryStore = defineStore("editing_category", {
     remove(category, answer) {
       const jurnal = useJurnalStore();
       if (answer) {
+
         axios
           .delete(`${api}/editing_categories/${category.id}`)
           .then((res) => {

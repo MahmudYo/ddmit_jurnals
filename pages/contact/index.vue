@@ -27,10 +27,10 @@ useHead({
         <li class="mb-2">
           <a
             class="text-mainColor hover:text-green-600 transition"
-            href="mailto:jaha_1992@list.ru"
+            href="mailto:payom@tgfeu.tj"
           >
-            <i class="bi bi-at"></i>
-            jaha_1992@list.ru
+            <i class="bi bi-envelope-at"></i>
+            payom@tgfeu.tj
           </a>
         </li>
       </ul>
