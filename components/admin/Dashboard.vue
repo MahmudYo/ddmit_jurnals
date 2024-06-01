@@ -15,6 +15,11 @@ const links = ref([
     label: "Ҳайати таҳририя",
     icon: "bi bi-card-checklist",
   },
+  {
+    link: "/admin/requirements",
+    label: "Талабот",
+    icon: "bi bi-info-circle-fill",
+  },
 ]);
 const burgerHide = ref(0);
 const logout = () => {

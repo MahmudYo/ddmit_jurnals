@@ -38,12 +38,18 @@ const sendUserData = async () => {
         .then((response) => {
           stateUser.user = response;
         })
+        .catch((err) => {
+          formData.error = err;
+        })
         .finally(() => {
           if (stateUser.user.role === "admin") {
             router.push("/admin");
           }
         });
       document.cookie = `token=${res.access_token};max-ag=${res.expires_in}`;
+    })
+    .catch((err) => {
+      formData.error = err;
     })
     .finally(() => {
       isLoading.value = false;
@@ -88,11 +94,26 @@ const sendUserData = async () => {
       type="submit"
       icon="bi bi-box-arrow-in-right"
       color="primary"
-      class="self-start"
+      class="self-start mt-2"
       variant="outline"
       >Sigin</UButton
     >
   </form>
+  <div class="flex justify-end">
+    <UButton
+      @click.prevent="
+        () => {
+          console.log('ok');
+        }
+      "
+      :loading="isLoading"
+      type="submit"
+      icon="bi bi-key"
+      color="red"
+      variant="outline"
+      >Forget</UButton
+    >
+  </div>
 </template>
 <style scoped>
 .bounce-enter-active {

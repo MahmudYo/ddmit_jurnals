@@ -32,9 +32,18 @@ watch(searchData, (newVal) => {
     <Transition>
       <div
         v-if="jurnals.length"
-        class="absolute py-1 px-2 rounded-md h-auto overflow-auto bg-white"
+        class="absolute py-1 px-2 w-full rounded-md max-h-[40vh] overflow-auto bg-white"
       >
-        <MainMagzineDatabaseCard v-for="item in jurnals" :item="item" />
+        <a
+          v-for="item in jurnals"
+          :key="item.id"
+          class="p-2 rounded block mb-2 bg-gray-200 text-mainColor transition hover:bg-gray-100 hover:text-activeColor text-center"
+          :href="`${config.public.apiUrl}/jurnals/document/${item.id}`"
+          target="_blank"
+        >
+          <div>{{ item.year }}</div>
+          <div>{{ item.title }}</div>
+        </a>
       </div>
     </Transition>
   </div>

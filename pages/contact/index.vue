@@ -24,16 +24,16 @@ definePageMeta({
             href="tel:(+992) 001.99.09.05"
           >
             <i class="bi bi-telephone"></i>
-            (+992) 001.99.09.05
+            (+992) 001-99-09-05
           </a>
         </li>
         <li class="mb-2">
           <a
             class="text-mainColor hover:text-green-600 transition"
-            href="mailto:payom@tgfeu.tj"
+            href="mailto:vestnik_tgfeu@tgfeu.tj"
           >
             <i class="bi bi-envelope-at"></i>
-            payom@tgfeu.tj
+            vestnik_tgfeu@tgfeu.tj
           </a>
         </li>
       </ul>
