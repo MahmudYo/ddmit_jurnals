@@ -1,6 +1,9 @@
 <script setup>
 import { useJurnalStore } from "~/store/Jurnal";
 const jurnal = useJurnalStore();
+definePageMeta({
+  middleware: "has-user",
+});
 onMounted(() => {
   jurnal.Index();
 });

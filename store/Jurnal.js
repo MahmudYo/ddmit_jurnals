@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import axios from "axios";
-const api = 'http://127.0.0.1:8000/api'
+const api = "http://127.0.0.1:8000/api";
 export const useJurnalStore = defineStore("jurnal", {
   state: () => ({
     jurnals: [],
@@ -148,6 +148,35 @@ export const useJurnalStore = defineStore("jurnal", {
           });
       } else {
         this.isOpenModal = false;
+      }
+    },
+    filterYear(date) {
+      if (date) {
+        const year = +date.split("-")[0];
+        this.isLoading = true;
+        axios
+          .get(`${api}/jurnals/year/${year}`)
+          .then((res) => {
+            this.jurnals = res.data.data;
+            this.paginate = res.data;
+            this.oldPages.push({ current_page: 1, data: this.jurnals });
+          })
+          .finally(() => {
+            this.isLoading = false;
+          });
+        // this.jurnals = this.jurnals.filter((item) => item.year == year);
+      } else {
+        this.isLoading = true;
+        axios
+          .get(`${api}/jurnals`)
+          .then((res) => {
+            this.jurnals = res.data.data;
+            this.paginate = res.data;
+            this.oldPages.push({ current_page: 1, data: this.jurnals });
+          })
+          .finally(() => {
+            this.isLoading = false;
+          });
       }
     },
   },

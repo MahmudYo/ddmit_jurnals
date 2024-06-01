@@ -2,6 +2,9 @@
 useHead({
   title: "Тамос",
 });
+definePageMeta({
+  middleware: "has-user",
+});
 </script>
 
 <template>

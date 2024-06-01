@@ -1,4 +1,9 @@
 <script setup>
+import { useUserStore } from "~/store/User";
+import Cookies from "js-cookie";
+
+const user = useUserStore();
+const router = useRouter();
 const links = ref([
   {
     link: "/admin/jurnal",
@@ -12,6 +17,14 @@ const links = ref([
   },
 ]);
 const burgerHide = ref(0);
+const logout = () => {
+  const isLogaut = user.logout();
+  if (isLogaut) {
+    router.push("/");
+    Cookies.remove("token");
+    user.user = {};
+  }
+};
 </script>
 <template>
   <div
@@ -31,7 +44,7 @@ const burgerHide = ref(0);
           @click="Boolean(burgerHide) ? (burgerHide = 0) : (burgerHide = 100)"
           class="max-md:absolute top-[4%] right-[-15%] hidden max-md:block"
         >
-         <i class="bi bi-list text-3xl text-mainColor font-bold"></i>
+          <i class="bi bi-list text-3xl text-mainColor font-bold"></i>
         </button>
       </div>
 
@@ -53,11 +66,11 @@ const burgerHide = ref(0);
     </div>
 
     <UButton
+      @click="logout"
       icon="bi bi-door-open-fill"
       size="xl"
       label="Баромадан"
       variant="outline"
-      to="/"
       color="violet"
     >
     </UButton>

@@ -1,3 +1,12 @@
+<script setup>
+import { useUserStore } from "~/store/User";
+const user = useUserStore();
+const nav_list = ref(null);
+const toggleNavbar = () => {
+  nav_list.value.classList.toggle("active");
+};
+</script>
+
 <template>
   <nav class="bg-mainColor">
     <div class="container">
@@ -20,19 +29,15 @@
           <li>
             <router-link to="/contact">Тамос</router-link>
           </li>
+          <li class="bg-black" v-if="user.user.role === 'admin'">
+            <router-link class="" to="/admin">ADMIN</router-link>
+          </li>
         </ul>
         <div class="text-2xl text-white">ISSN 2663-0389</div>
       </div>
     </div>
   </nav>
 </template>
-
-<script setup>
-const nav_list = ref(null);
-const toggleNavbar = () => {
-  nav_list.value.classList.toggle("active");
-};
-</script>
 
 <style scoped>
 a {

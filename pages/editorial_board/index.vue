@@ -7,6 +7,9 @@ useHead({
 onMounted(() => {
   listData.index();
 });
+definePageMeta({
+  middleware: "has-user",
+});
 // const dataPositionList = ref([
 //   {
 //     title: "Сармуҳаррир",

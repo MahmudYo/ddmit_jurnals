@@ -1,5 +1,7 @@
 <script setup>
 import axios from "axios";
+import { useUserStore } from "~/store/User";
+const user = useUserStore();
 const searchData = ref("");
 const config = useRuntimeConfig();
 const jurnals = ref([]);
@@ -7,6 +9,7 @@ const model = (value, name) => {
   searchData.value = value;
 };
 watch(searchData, (newVal) => {
+  user.admin = newVal;
   if (newVal.length) {
     axios.get(`${config.public.apiUrl}/search/${newVal}`).then((res) => {
       jurnals.value = res.data;

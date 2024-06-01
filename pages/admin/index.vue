@@ -2,6 +2,10 @@
 const isOpen = ref(false);
 import { useUserStore } from "~/store/User";
 const user = useUserStore();
+definePageMeta({
+  middleware: "auth",
+});
+
 </script>
 <template>
   <NuxtLayout name="admin">
@@ -14,7 +18,9 @@ const user = useUserStore();
     </div>
     <UModal v-model="isOpen">
       <div class="p-4">
-        <h4 class="text-mainColor">Шумо мехоҳед тафсилоти худро тағир диҳед?</h4>
+        <h4 class="text-mainColor">
+          Шумо мехоҳед тафсилоти худро тағир диҳед?
+        </h4>
         <div>
           <UiInputsMain
             class="text-black mb-3"
@@ -24,7 +30,7 @@ const user = useUserStore();
             name="username"
             :required="true"
             @model="model"
-            :value="user.authUser.username"
+            :value="user.username"
           />
           <UiInputsMain
             class="text-black mb-3"
@@ -34,7 +40,7 @@ const user = useUserStore();
             name="password"
             :required="true"
             @model="model"
-            :value="user.authUser"
+            :value="user.password"
           />
           <UButton
             icon="i-heroicons-pencil-square"

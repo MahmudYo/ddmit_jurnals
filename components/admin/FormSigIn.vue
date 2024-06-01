@@ -2,8 +2,8 @@
 import axios from "axios";
 import { useUserStore } from "~/store/User";
 const stateUser = useUserStore();
+const router = useRouter();
 const config = useRuntimeConfig();
-const authToken = ref(null);
 const isLoading = ref(false);
 const formData = reactive({
   username: null,
@@ -17,22 +17,36 @@ const model = (value, inputName) => {
     formData.password = value;
   }
 };
-const sendUserData = () => {
+const sendUserData = async () => {
   isLoading.value = true;
-  axios
-    .post(`${config.public.apiUrl}/login`, formData)
+  await $fetch(`${config.public.apiUrl}/auth/login`, {
+    method: "POST",
+    body: formData,
+    headers: {
+      Accept: "application/json",
+    },
+  })
     .then((res) => {
-      console.log(res);
-      authToken.value = res.data;
-    })
-    .catch((err) => {
-      console.log(err);
-      formData.error = err.response.data.message;
+      stateUser.token = res.access_token;
+      $fetch(`${config.public.apiUrl}/auth/me`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${res.access_token}`,
+        },
+      })
+        .then((response) => {
+          stateUser.user = response;
+        })
+        .finally(() => {
+          if (stateUser.user.role === "admin") {
+            router.push("/admin");
+          }
+        });
+      document.cookie = `token=${res.access_token};max-ag=${res.expires_in}`;
     })
     .finally(() => {
       isLoading.value = false;
-      stateUser.authUser = authToken.value.user;
-      document.cookie = `auth_token = ${authToken.value.access_token}`;
     });
 };
 </script>
