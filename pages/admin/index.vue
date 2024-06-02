@@ -1,11 +1,36 @@
 <script setup>
 const isOpen = ref(false);
+import axios from "axios";
+const config = useRuntimeConfig();
 import { useUserStore } from "~/store/User";
 const user = useUserStore();
+const formData = reactive({
+  username: null,
+  password: null,
+});
+const model = (value, name) => {
+  if (name === "username") {
+    formData.username = value;
+  } else {
+    formData.password = value;
+  }
+};
+const setUserData = async () => {
+  await axios
+    .post(`${config.public.apiUrl}/users/${user.user.id}`, formData)
+    .then((res) => {
+      user.user = res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+    .finally(() => {
+      isOpen.value = false;
+    });
+};
 definePageMeta({
   middleware: "auth",
 });
-
 </script>
 <template>
   <NuxtLayout name="admin">
@@ -21,28 +46,29 @@ definePageMeta({
         <h4 class="text-mainColor">
           Шумо мехоҳед тафсилоти худро тағир диҳед?
         </h4>
-        <div>
+        <form @submit.prevent="setUserData">
           <UiInputsMain
             class="text-black mb-3"
             type="text"
             icon="bi bi-person"
-            placeholder="Username"
+            placeholder="New username"
             name="username"
             :required="true"
             @model="model"
-            :value="user.username"
+            :value="user.user.username"
           />
           <UiInputsMain
             class="text-black mb-3"
             type="password"
             icon="bi bi-key-fill"
-            placeholder="Password"
+            placeholder="New password"
             name="password"
             :required="true"
             @model="model"
-            :value="user.password"
           />
           <UButton
+            type="submit"
+            class="mt-3"
             icon="i-heroicons-pencil-square"
             size="sm"
             color="indigo"
@@ -50,7 +76,7 @@ definePageMeta({
             label="Тағир"
             :trailing="false"
           />
-        </div>
+        </form>
       </div>
     </UModal>
   </NuxtLayout>

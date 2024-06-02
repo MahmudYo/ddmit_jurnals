@@ -15,11 +15,11 @@
         </div>
         <div class="flex gap-3 items-center">
           <HeaderSearch />
-          <select class="form-select flex-[30%] text-uppercase" name="" id="">
+          <!-- <select class="form-select flex-[30%] text-uppercase" name="" id="">
             <option value="tj">tj</option>
             <option value="ru">ru</option>
             <option value="en">en</option>
-          </select>
+          </select> -->
         </div>
       </div>
     </div>
