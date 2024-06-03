@@ -2,7 +2,7 @@
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "/api-handler.js"
+        "dest": "http://a0990588.xsph.ru/api/$1"
       }
     ]
   }
