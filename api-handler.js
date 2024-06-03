@@ -1,25 +1,21 @@
-const { createServer } = require('http');
-const { parse } = require('url');
-const proxy = require('http-proxy-middleware');
+const http = require('http');
+const httpProxy = require('http-proxy');
 
-const server = createServer((req, res) => {
-  const { pathname, query } = parse(req.url, true);
-  
-  if (pathname.startsWith('/api')) {
-    return apiProxy(req, res);
-  }
+// Создаем прокси сервер
+const proxy = httpProxy.createProxyServer({});
 
-  res.statusCode = 404;
-  res.end('Not Found');
-});
+// Создаем HTTP сервер на Vercel
+http.createServer(function (req, res) {
+  // Указываем прокси отправить запрос на ваш бэкенд
+  proxy.web(req, res, {
+    target: 'http://a0990588.xsph.ru'
+  });
+}).listen(process.env.PORT || 3000); // Слушаем на порту 3000
 
-const apiProxy = proxy({
-  target: 'http://a0990588.xsph.ru',
-  changeOrigin: true,
-  pathRewrite: { '^/api': '/' }
-});
-
-server.listen(3000, (err) => {
-  if (err) throw err;
-  console.log('> Ready on http://localhost:3000');
+// Обработка ошибок прокси
+proxy.on('error', function (err, req, res) {
+  res.writeHead(500, {
+    'Content-Type': 'text/plain'
+  });
+  res.end('Произошла ошибка при обращении к бэкенду.');
 });
