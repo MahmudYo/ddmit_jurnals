@@ -1,9 +1,8 @@
 {
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "https://a0990588.xsph.ru/api/$1",
-      "headers": { "host": "a0990588.xsph.ru" }
-    }
-  ]
-}
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/api-handler.js"
+      }
+    ]
+  }
