@@ -1,8 +1,4 @@
 {
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "http://a0990588.xsph.ru/api/$1"
-      }
-    ]
+    "forceSSL": false
   }
+  
