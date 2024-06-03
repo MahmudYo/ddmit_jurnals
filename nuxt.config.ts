@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   modules: ["usebootstrap", "@nuxt/ui", "@pinia/nuxt"],
   runtimeConfig: {
     public: {
-      apiUrl: "http://127.0.0.1:8000/api",
+      apiUrl: "http://a0990588.xsph.ru/api",
     },
   },
   postcss: {

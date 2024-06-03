@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 import { useJurnalStore } from "./Jurnal";
-const api = "http://127.0.0.1:8000/api";
+const api = "http://a0990588.xsph.ru/api";
 export const editingPesonseStore = defineStore("editing_persone", {
   state: () => ({
     persone: [],
