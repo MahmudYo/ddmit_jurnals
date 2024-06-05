@@ -8,7 +8,9 @@ const config = useRuntimeConfig();
   <div
     class="flex flex-col items-center hover:shadow-lg hover:scale-110 pt-3 mx-3 transition"
   >
-    <div class="w-[175px] relative hover:group-hover:hidden group mb-3">
+    <div
+      class="w-[175px] h-[260px] relative hover:group-hover:hidden group mb-3"
+    >
       <div
         class="absolute top-0 left-0 bg-black transition w-full h-full bg-opacity-50 items-center justify-center gap-1 group-hover:flex hidden"
       >
@@ -27,7 +29,7 @@ const config = useRuntimeConfig();
       </div>
       <img
         :src="`${config.public.apiUrl}/jurnals/image/${item.id}`"
-        class="w-full h-full"
+        class="h-full w-full"
         :alt="`IMAGE ${item.name}`"
       />
     </div>

@@ -150,34 +150,34 @@ export const useJurnalStore = defineStore("jurnal", {
         this.isOpenModal = false;
       }
     },
-    filterYear(date) {
-      if (date) {
-        const year = +date.split("-")[0];
-        this.isLoading = true;
-        axios
-          .get(`${api}/jurnals/year/${year}`)
-          .then((res) => {
-            this.jurnals = res.data.data;
-            this.paginate = res.data;
-            this.oldPages.push({ current_page: 1, data: this.jurnals });
-          })
-          .finally(() => {
-            this.isLoading = false;
-          });
-        // this.jurnals = this.jurnals.filter((item) => item.year == year);
-      } else {
-        this.isLoading = true;
-        axios
-          .get(`${api}/jurnals`)
-          .then((res) => {
-            this.jurnals = res.data.data;
-            this.paginate = res.data;
-            this.oldPages.push({ current_page: 1, data: this.jurnals });
-          })
-          .finally(() => {
-            this.isLoading = false;
-          });
-      }
-    },
+    // filterYear(date) {
+    //   if (date) {
+    //     const year = +date.split("-")[0];
+    //     this.isLoading = true;
+    //     axios
+    //       .get(`${api}/jurnals/year/${year}`)
+    //       .then((res) => {
+    //         this.jurnals = res.data.data;
+    //         this.paginate = res.data;
+    //         this.oldPages.push({ current_page: 1, data: this.jurnals });
+    //       })
+    //       .finally(() => {
+    //         this.isLoading = false;
+    //       });
+    //     // this.jurnals = this.jurnals.filter((item) => item.year == year);
+    //   } else {
+    //     this.isLoading = true;
+    //     axios
+    //       .get(`${api}/jurnals`)
+    //       .then((res) => {
+    //         this.jurnals = res.data.data;
+    //         this.paginate = res.data;
+    //         this.oldPages.push({ current_page: 1, data: this.jurnals });
+    //       })
+    //       .finally(() => {
+    //         this.isLoading = false;
+    //       });
+    //   }
+    // },
   },
 });

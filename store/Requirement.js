@@ -22,6 +22,7 @@ export const requirementStore = defineStore("requirement", {
           })
           .catch((err) => {
             console.log(err);
+            alert(`${err} 404`);
           })
           .finally(() => {
             jurnal.isLoading = false;
@@ -35,9 +36,11 @@ export const requirementStore = defineStore("requirement", {
         .post(`${api}/requirements`, this.formData)
         .then((res) => {
           console.log(res);
+          alert("Saved");
         })
         .catch((err) => {
           console.log(err);
+          alert(`${err} 404`);
         })
         .finally(() => {
           jurnal.isLoading = false;
@@ -55,8 +58,10 @@ export const requirementStore = defineStore("requirement", {
           this.requirements.filter((item) => {
             return item.id === res.data.id;
           });
+          alert("Saved");
         })
         .catch((err) => {
+          alert(`${err} 404`);
           console.log(err);
         })
         .finally(() => {
