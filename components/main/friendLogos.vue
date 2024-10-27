@@ -8,18 +8,7 @@
         alt="logo Elibrary"
       />
     </a>
-    <a
-      href="https://elibrary.ru/projects/science_index/science_index_org_info.asp"
-    >
-      <img
-        class="w-[100px]"
-        src="@/assets/main/logo Index.png"
-        alt="logo Index"
-      />
-    </a>
-    <a
-      href="https://cyberleninka.ru/"
-    >
+    <a href="https://cyberleninka.ru/">
       <img
         class="w-[150px]"
         src="@/assets/main/logo kiberlinenk.png"

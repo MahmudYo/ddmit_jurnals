@@ -32,7 +32,7 @@ const changePageTo = (current_page) => {
 
 <template>
   <UPagination
-    class="pl-3 mb-3"
+    class=" p-5"
     v-model="jurnale.paginate.current_page"
     :total="jurnale.paginate.total"
     :page-count="15"

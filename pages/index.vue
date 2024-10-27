@@ -13,7 +13,7 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col  min-h-full">
     <Transition>
       <div class="mt-5" v-if="!jurnal.isLoading && !jurnal.jurnals.length">
         <h4 class="text-center text-mainColor">

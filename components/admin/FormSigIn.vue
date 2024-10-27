@@ -79,7 +79,10 @@ const restPsssword = async () => {
 
 <template>
   <div>
-    <h2 class="text-center">Welcome</h2>
+    <button @click="() => (stateUser.admin = null)" class="text-end w-full">
+      <i class="bi bi-x-circle-fill text-red"></i>
+    </button>
+    <h2 class="text-center text-4xl mb-3 font-bold">Welcome</h2>
     <form
       @submit.prevent="sendUserData"
       v-if="!isForget"

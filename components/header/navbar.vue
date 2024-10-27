@@ -9,7 +9,7 @@ const toggleNavbar = () => {
 
 <template>
   <nav class="bg-mainColor">
-    <div class="container">
+    <div class="container m-auto">
       <button @click="toggleNavbar" class="btn btn-nav btn-success">
         <span></span>
         <span></span>

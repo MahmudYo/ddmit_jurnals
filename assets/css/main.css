@@ -32,3 +32,10 @@ button {
   opacity: 0;
   transform: translateY(100%);
 }
+
+@font-face {
+  font-family: "Roboto";
+  src:
+    local("Trickster"),
+    url("@/assets/font/Roboto/Roboto-Regular.ttf") format("ttf"),
+}

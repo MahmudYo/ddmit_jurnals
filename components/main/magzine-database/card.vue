@@ -15,13 +15,13 @@ const config = useRuntimeConfig();
         class="absolute top-0 left-0 bg-black transition w-full h-full bg-opacity-50 items-center justify-center gap-1 group-hover:flex hidden"
       >
         <a
-          class="btn btn-primary"
+          class="text-white text-xl p-2 rounded-lg bg-teal-500"
           target="_blank"
           :href="`${config.public.apiUrl}/jurnals/document/${item.id}`"
           ><i class="bi bi-book"></i
         ></a>
         <a
-          class="btn btn-success"
+          class="text-white text-xl p-2 rounded-lg bg-blue-500"
           target="_blank"
           :href="`${config.public.apiUrl}/jurnals/document/download/${item.id}`"
           ><i class="bi bi-download"></i

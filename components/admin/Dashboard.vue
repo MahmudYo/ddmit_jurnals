@@ -6,6 +6,10 @@ const user = useUserStore();
 const router = useRouter();
 const links = ref([
   {
+    link: "/",
+    label: "Асоси",
+  },
+  {
     link: "/admin/jurnal",
     label: "Маҷаллахо",
     icon: "bi bi-journal-bookmark",

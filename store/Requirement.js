@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-const api = "http://a0990588.xsph.ru/api";
+const api = "http://127.0.0.1:8000/api";
 import { useJurnalStore } from "./Jurnal";
 import axios from "axios";
 export const requirementStore = defineStore("requirement", {

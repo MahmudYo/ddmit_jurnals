@@ -17,7 +17,7 @@ onMounted(() => {
       <HeaderMain />
       <HeaderNavbar />
     </header>
-    <main class="bg-gray-100 flex-auto">
+    <main class="bg-gray-100 flex-auto text-black">
       <div class="flex">
         <div
           class="flex-[15%] h-full py-2 flex flex-col items-center gap-5 px-3 sticky top-0 left-0"
@@ -33,13 +33,17 @@ onMounted(() => {
             /> -->
         </div>
 
-        <div class="container relative bg-white">
+        <div class="container relative bg-white mb-5">
           <div class="absolute w-full h-full flex justify-center items-center">
             <Transition>
-              <UiLoading v-if="jurnal.isLoading" />
+              <UiLoading
+                v-if="jurnal.isLoading && $route.path !== '/contact'"
+              />
             </Transition>
           </div>
-          <NuxtPage />
+          <div class="relative z-50  p-5 min-h-screen">
+            <NuxtPage />
+          </div>
         </div>
         <div class="flex-[15%] py-2 h-full sticky top-0 left-0">
           <MainFriendLogos />
@@ -48,9 +52,9 @@ onMounted(() => {
       <Transition>
         <div
           v-if="user.admin === 'admin'"
-          class="fixed flex items-center z-20 top-0 left-0 bg-white w-screen h-screen"
+          class="fixed flex items-center z-50 top-0 left-0 bg-white w-screen h-screen"
         >
-          <div class="container">
+          <div class="container m-auto">
             <AdminFormSigIn />
           </div>
         </div>

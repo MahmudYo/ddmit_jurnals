@@ -2,7 +2,7 @@
 
 <template>
   <nav>
-    <div class="container">
+    <div class="container m-auto">
       <div class="flex items-center max-md:flex-col gap-3 justify-between">
         <div class="">
           <a href="http://tgfeu.tj/tj/">
