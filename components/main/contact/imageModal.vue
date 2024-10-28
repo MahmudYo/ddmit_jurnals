@@ -1,6 +1,5 @@
 <script setup>
 const isOpen = ref(false);
-
 </script>
 <template>
   <img

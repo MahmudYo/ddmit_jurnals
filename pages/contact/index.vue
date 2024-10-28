@@ -8,7 +8,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="py-5 flex gap-5">
+  <div class="py-5 flex max-md:flex-wrap max-md:items-center justify-center gap-5">
     <MainContactImageModal />
     <div>
       <ul class="mb-3">

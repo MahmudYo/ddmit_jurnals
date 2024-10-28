@@ -1,10 +1,16 @@
 <script setup>
 import { useJurnalStore } from "~/store/Jurnal";
+import { useResizeStore } from "~/store/Resize";
 import { useUserStore } from "~/store/User";
 const jurnal = useJurnalStore();
 const user = useUserStore();
+const resize = useResizeStore();
 onMounted(() => {
   jurnal.isLoading = false;
+  resize.getResize();
+});
+onUnmounted(() => {
+  window.removeEventListener("resize");
 });
 </script>
 <template>
@@ -18,19 +24,20 @@ onMounted(() => {
       <HeaderNavbar />
     </header>
     <main class="bg-gray-100 flex-auto text-black">
-      <div class="flex">
+      <div class="flex justify-center w-full">
         <div
+          v-if="resize.resize.width > 992"
           class="flex-[15%] h-full py-2 flex flex-col items-center gap-5 px-3 sticky top-0 left-0"
         >
           <div>
             <UiJurnalWrning />
+            <div
+              v-if="resize.resize.width < 992"
+              class="flex-[15%] py-2 h-full sticky top-0 left-0"
+            >
+              <MainFriendLogos />
+            </div>
           </div>
-          <!-- <input
-              v-if="$route.path === `/`"
-              type="date"
-              class="form-control"
-              @change="jurnal.filterYear($event.target.value)"
-            /> -->
         </div>
 
         <div class="container relative bg-white mb-5">
@@ -41,11 +48,14 @@ onMounted(() => {
               />
             </Transition>
           </div>
-          <div class="relative z-50  p-5 min-h-screen">
+          <div class="relative z-50 p-5 min-h-screen">
             <NuxtPage />
           </div>
         </div>
-        <div class="flex-[15%] py-2 h-full sticky top-0 left-0">
+        <div
+          v-if="resize.resize.width > 992"
+          class="flex-[15%] py-2 h-full sticky top-0 left-0"
+        >
           <MainFriendLogos />
         </div>
       </div>

@@ -16,6 +16,7 @@ module.exports = {
         activeColor: "#00A67C",
       },
     },
+
   },
   plugins: [],
 };

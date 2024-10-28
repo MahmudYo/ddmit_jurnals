@@ -1,6 +1,6 @@
 <template>
   <div class="header__main">
-    <div class="container m-auto">
+    <div class="container m-auto px-4">
       <div class="header__main-content">
         <div class="header__main-title">
           <h1
@@ -8,11 +8,11 @@
           >
             Паёми молия ва иқтисод
             <span
-              class="text-[15px] font-[Roboto] text-teal-800 leading-6 uppercase"
+              class="text-sm max-sm:text-xs font-[Roboto] text-teal-800 leading-6 uppercase"
               >ФИНАНСОВО-ЭКОНОМИЧЕСКИЙ ВЕСТНИК</span
             >
             <span
-              class="text-[15px] font-[Roboto] text-teal-800 leading-6 uppercase"
+              class="text-sm max-sm:text-xs font-[Roboto] text-teal-800 leading-6 uppercase"
               >THE FINANCE AND ECONOMIC BULLETIN</span
             >
           </h1>

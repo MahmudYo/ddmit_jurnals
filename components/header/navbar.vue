@@ -1,22 +1,44 @@
 <script setup>
+import { useResizeStore } from "~/store/Resize";
 import { useUserStore } from "~/store/User";
 const user = useUserStore();
 const nav_list = ref(null);
+const resize = useResizeStore();
 const toggleNavbar = () => {
   nav_list.value.classList.toggle("active");
 };
+watch(
+  () => resize.resize.width,
+  (newVal) => {
+    if (newVal > 1000) {
+      nav_list.value.classList.remove("active");
+    }
+  }
+);
 </script>
 
 <template>
   <nav class="bg-mainColor">
-    <div class="container m-auto">
-      <button @click="toggleNavbar" class="btn btn-nav btn-success">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <div class="container m-auto px-5">
+      <div class="flex items-center justify-between gap-5">
+        <button
+          @click="toggleNavbar"
+          class="btn hover:rotate-90 transition-transform btn-nav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div
+          v-if="resize.resize.width < 992"
+          class="text-2xl text-white flex items-center gap-5"
+        >
+          <span>ISSN 2663-0389</span>
+          <main-friend-logos />
+        </div>
+      </div>
       <div class="flex justify-between items-center">
-        <ul ref="nav_list" class="nav-list">
+        <ul ref="nav_list" class="nav-list w-full text-center">
           <li>
             <router-link to="/">Махзани маҷалла</router-link>
           </li>
@@ -32,8 +54,19 @@ const toggleNavbar = () => {
           <li class="bg-black" v-if="user.user.role === 'admin'">
             <router-link class="" to="/admin">ADMIN</router-link>
           </li>
+          <li
+            v-if="resize.resize.width < 992"
+            class="flex justify-center w-full my-5"
+          >
+            <ui-jurnal-wrning />
+          </li>
         </ul>
-        <div class="text-2xl text-white">ISSN 2663-0389</div>
+        <div
+          v-if="resize.resize.width > 1025"
+          class="text-2xl text-white flex-[20%]"
+        >
+          ISSN 2663-0389
+        </div>
       </div>
     </div>
   </nav>
@@ -76,7 +109,7 @@ a {
 }
 
 .btn-nav {
-  width: 45px;
+  width: 30px;
   height: 45px;
   display: none;
 }
@@ -96,7 +129,6 @@ a {
   .nav-list {
     display: none;
   }
-
   .btn-nav {
     display: flex;
     flex-direction: column;
