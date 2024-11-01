@@ -51,7 +51,7 @@ watch(
           <li>
             <router-link to="/contact">Тамос</router-link>
           </li>
-          <li class="bg-black" v-if="user.user.role === 'super_admin' || 'admin'">
+          <li class="bg-black" v-if="user.user.role === ('super_admin' || "admin")">
             <router-link class="" to="/admin">ADMIN</router-link>
           </li>
           <li
