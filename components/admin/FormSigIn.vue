@@ -44,7 +44,7 @@ const sendUserData = async () => {
           formData.error = err;
         })
         .finally(() => {
-          if (stateUser.user.role === "admin") {
+          if (stateUser.user.role === "admin" || "super_admin") {
             router.push("/admin");
           }
         });

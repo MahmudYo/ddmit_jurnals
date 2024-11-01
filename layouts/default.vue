@@ -61,7 +61,7 @@ onUnmounted(() => {
       </div>
       <Transition>
         <div
-          v-if="user.admin === 'admin'"
+          v-if="user.admin === 'admin' || 'super_admin'"
           class="fixed flex items-center z-50 top-0 left-0 bg-white w-screen h-screen"
         >
           <div class="container m-auto">

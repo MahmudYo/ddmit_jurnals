@@ -29,7 +29,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
     user.user = res;
 
     // Проверяем роль пользователя
-    if (res.role !== "admin") {
+    if (res.role !== "admin" || 'super_admin') {
       console.log("User is not admin, redirecting to /404");
       return navigateTo("/404");
     }

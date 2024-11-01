@@ -39,10 +39,14 @@ definePageMeta({
   <NuxtLayout name="admin">
     <div class="flex items-center flex-col gap-3 justify-center h-full">
       <i
+        v-if="user.user.role === 'super_admin'"
         @click="isOpen = true"
         class="bi bi-shield-fill-check text-6xl cursor-pointer transition hover:text-activeColor text-mainColor"
       ></i>
-      <h1 class="text-3xl text-center">Хуш омадед ба панели администратори</h1>
+      <i
+        v-if="user.user.role !== 'super_admin'"
+        class="bi bi-shield-fill-check text-6xl cursor-pointer transition hover:text-activeColor text-mainColor"
+      ></i>
     </div>
     <UModal v-model="isOpen">
       <div class="p-4">
