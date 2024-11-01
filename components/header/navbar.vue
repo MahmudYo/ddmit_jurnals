@@ -51,9 +51,15 @@ watch(
           <li>
             <router-link to="/contact">Тамос</router-link>
           </li>
-          <li class="bg-black" v-if="user.user.role === ('super_admin' || "admin")">
-            <router-link class="" to="/admin">ADMIN</router-link>
+          <li
+            class="bg-black"
+            v-if="
+              user.user.role === 'super_admin' || user.user.role === 'admin'
+            "
+          >
+            <router-link to="/admin">ADMIN</router-link>
           </li>
+
           <li
             v-if="resize.resize.width < 992"
             class="flex justify-center w-full my-5"
