@@ -1,6 +1,6 @@
 import { useUserStore } from "~/store/User";
 import Cookies from "js-cookie";
-const api = "http://127.0.0.1:8000/api";
+const api = "https://crazy-gauss.89-253-237-222.plesk.page/api";
 export default defineNuxtRouteMiddleware((to, from) => {
   const user = useUserStore();
   const token = Cookies.get("token");

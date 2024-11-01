@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import axios from "axios";
-const api = "http://127.0.0.1:8000/api";
+const api = "https://crazy-gauss.89-253-237-222.plesk.page/api";
 export const useJurnalStore = defineStore("jurnal", {
   state: () => ({
     jurnals: [],

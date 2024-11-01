@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-const api = "http://127.0.0.1:8000/api";
+const api = "https://crazy-gauss.89-253-237-222.plesk.page/api";
 export const useUserStore = defineStore("user", {
   state: () => ({
     user: {},

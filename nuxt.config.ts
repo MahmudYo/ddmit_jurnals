@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   modules: ["@nuxt/ui", "@pinia/nuxt"],
   runtimeConfig: {
     public: {
-      apiUrl: "http://127.0.0.1:8000/api",
+      apiUrl: "https://crazy-gauss.89-253-237-222.plesk.page/api",
     },
   },
   css: ["bootstrap-icons/font/bootstrap-icons.css", "@/assets/css/main.css"],
