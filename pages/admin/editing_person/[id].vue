@@ -4,6 +4,9 @@ import { useJurnalStore } from "~/store/Jurnal";
 const persone = editingPesonseStore();
 const jurnal = useJurnalStore();
 const route = useRoute();
+definePageMeta({
+  middleware: "auth",
+});
 onMounted(() => {
   persone.index(route.params.id);
 });

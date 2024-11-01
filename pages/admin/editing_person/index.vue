@@ -1,6 +1,9 @@
 <script setup>
 import { useJurnalStore } from "~/store/Jurnal";
 import { editingCategoryStore } from "~/store/EditingPerson";
+definePageMeta({
+  middleware: "auth",
+});
 const jurnal = useJurnalStore();
 const category = editingCategoryStore();
 const columns = [

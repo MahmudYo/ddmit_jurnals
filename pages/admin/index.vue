@@ -1,4 +1,7 @@
 <script setup>
+definePageMeta({
+  middleware: "auth",
+});
 const isOpen = ref(false);
 import axios from "axios";
 const config = useRuntimeConfig();

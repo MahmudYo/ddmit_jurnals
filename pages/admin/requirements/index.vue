@@ -1,6 +1,9 @@
 <script setup>
 import { requirementStore } from "@/store/Requirement";
 import { useJurnalStore } from "~/store/Jurnal";
+definePageMeta({
+  middleware: "auth",
+});
 const requirement = requirementStore();
 const jurnal = useJurnalStore();
 const showFormAction = () => {
