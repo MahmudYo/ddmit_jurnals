@@ -43,14 +43,14 @@ watch(searchData, (newVal) => {
     <UiInputsMain
       type="text"
       icon="bi bi-search"
-      placeholder="Ҷустуҷӯ..."
+      placeholder="Ҷустуҷӯи маҷалла аз рӯи соли нашр"
       name="search"
       @model="model"
     />
     <Transition>
       <div
         v-if="+searchData.length"
-        class="absolute z-10 py-1 flex items-center flex-col px-2 w-full rounded-md max-h-[55vh] overflow-auto bg-white"
+        class="absolute max-sm:w-screen max-sm:-translate-x-5 max-md:left-0 max-md:right-0 z-[51] py-1 flex items-center flex-col px-2 w-full rounded-md max-h-[350px] overflow-auto bg-white"
       >
         <div
           v-if="jurnals.length"

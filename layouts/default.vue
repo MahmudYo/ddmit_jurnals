@@ -30,7 +30,6 @@ onUnmounted(() => {
           class="flex-[15%] h-full py-2 flex flex-col items-center gap-5 px-3 sticky top-0 left-0"
         >
           <div>
-            <UiJurnalWrning />
             <div
               v-if="resize.resize.width < 992"
               class="flex-[15%] py-2 h-full sticky top-0 left-0"

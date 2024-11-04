@@ -6,15 +6,17 @@
           <h1
             class="flex font-[Roboto] flex-col items-start text-4xl max-md:text-2xl max-sm:text-xl text-mainColor uppercase font-bold"
           >
-            Паёми молия ва иқтисод
-            <span
-              class="text-sm max-sm:text-xs font-[Roboto] text-teal-800 leading-6 uppercase"
-              >ФИНАНСОВО-ЭКОНОМИЧЕСКИЙ ВЕСТНИК</span
-            >
-            <span
-              class="text-sm max-sm:text-xs font-[Roboto] text-teal-800 leading-6 uppercase"
-              >THE FINANCE AND ECONOMIC BULLETIN</span
-            >
+            <template v-for="(text, i) in texts">
+              <span
+                :class="
+                  i != 0
+                    ? 'text-sm max-sm:text-xs font-[Roboto] text-teal-800 leading-6 uppercase'
+                    : ``
+                "
+              >
+                {{ text.label }}
+              </span>
+            </template>
           </h1>
         </div>
       </div>
@@ -22,7 +24,25 @@
   </div>
 </template>
 
-<script></script>
+<script setup>
+const texts = reactive([
+  {
+    id: "tj",
+    label: "Паёми молия ва иқтисод",
+  },
+  {
+    id: "ru",
+    label: "ФИНАНСОВО ЭКОНОМИЧЕСКИЙ ВЕСТНИК",
+  },
+  {
+    id: "en",
+    label: "THE FINANCE AND ECONOMIC BULLETIN",
+  },
+]);
+onMounted(() => {
+  texts.value = sortedLang(texts);
+});
+</script>
 
 <style scoped>
 .header__main {

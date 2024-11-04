@@ -28,9 +28,9 @@ const config = useRuntimeConfig();
         ></a>
       </div>
       <img
-        :src="`${config.public.apiUrl}/jurnals/image/${item.id}`"
-        class="h-full w-full"
-        :alt="`IMAGE ${item.name}`"
+        :src="`${config.public.apiUrl}/jurnals/image/${item.id}` || '/img/jurnal/defualt.jfif'"
+        class="h-full w-full" 
+        :alt="`IMAGE ${item.title}`"
       />
     </div>
     <div>

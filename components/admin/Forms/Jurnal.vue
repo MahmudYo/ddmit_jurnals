@@ -13,6 +13,8 @@ const sendFormData = (answer) => {
 const model = (value, name) => {
   if (name === "jurnal") {
     jurnal.formData.jurnal = value;
+    console.log(value);
+    
   } else if (name === "image") {
     jurnal.formData.image = value;
   } else if (name === "title") {

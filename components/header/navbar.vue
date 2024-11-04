@@ -64,9 +64,8 @@ watch(
             v-if="resize.resize.width < 992"
             class="flex justify-center w-full my-5"
           >
-            <ui-jurnal-wrning />
           </li>
-        </ul>
+        </ul>x  
         <div
           v-if="resize.resize.width > 1025"
           class="text-2xl text-white flex-[20%]"
