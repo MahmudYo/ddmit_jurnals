@@ -18,6 +18,19 @@ export const useLangStore = defineStore("lang", {
         avatar: { src: "/img/flags/en.png" },
       },
     ],
+    selected: {
+      id: "tj",
+      label: "TJ",
+      avatar: { src: "/img/flags/tj.png" },
+    },
+    translation: {
+      logos: [],
+      logo: {},
+      searchPlaceholders: [],
+      searchPlaceholder: {},
+      navbars: [],
+      translateNavbars: [],
+    },
   }),
   actions: {
     onSelect() {

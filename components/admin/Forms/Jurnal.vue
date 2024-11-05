@@ -35,7 +35,6 @@ const model = (value, name) => {
         name="jurnal"
         accept=".pdf, .epub, .mobi, .docx"
         @Vchange="model"
-        :required="true"
       />
       <UiInputsMain
         accept="image/*"
@@ -44,7 +43,6 @@ const model = (value, name) => {
         title="Муковаи китоб (.jpg) 175x260px"
         name="image"
         @Vchange="model"
-        :required="true"
       />
       <UiInputsMain
         type="text"

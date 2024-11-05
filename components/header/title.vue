@@ -2,30 +2,57 @@
 import { useLangStore } from "~/store/Lang";
 
 const lang = useLangStore();
-onMounted(() => {
-  lang.onSelect();
+const logos = reactive([
+  {
+    id: "tj",
+    src: "/img/logos/logo-tj.png",
+    alt: "Logo Tajik Variant",
+  },
+  {
+    id: "ru",
+    src: "/img/logos/logo-ru.png",
+    alt: "Logo Russian Variant",
+  },
+  {
+    id: "en",
+    src: "/img/logos/logo-en.png",
+    alt: "Logo England Variant",
+  },
+]);
+let selentedLogo = reactive({
+  id: "tj",
+  src: "/img/logos/logo-tj.png",
+  alt: "Logo Tajik Variant",
 });
+watch(
+  () => lang.selected,
+  (select) => {
+    if (select && select.id) {
+      selentedLogo = logos.find((item) => item.id == select.id);
+    }
+  }
+);
 </script>
 
 <template>
   <nav>
     <div class="container m-auto">
       <div
-        class="flex items-center max-md:items-stretch max-md:px-5 max-md:flex-col gap-20 max-md:gap-3"
+        class="flex items-center justify-between max-md:items-stretch max-md:px-5 max-md:flex-col max-md:gap-3"
       >
-        <div class="">
+        <div>
           <a href="http://tgfeu.tj/tj/">
             <img
-              class="w-[200px] h-[50px] m-auto"
-              src="@/assets/header/title/logo-2.png"
-              alt=""
+              class="max-w-[250px] h-[50px] m-auto"
+              :src="selentedLogo.src"
+              :alt="selentedLogo.alt"
             />
           </a>
         </div>
-        <div class="flex-auto">
-          <div class="flex gap-20 max-md:gap-5">
-            <HeaderSearch class="flex-auto" />
-            <USelectMenu
+        <div>
+          <div class="flex gap-10 max-md:gap-5">
+            <HeaderSearch class="w-[350px]" />
+            <!-- <USelectMenu
               size="lg"
               v-model="lang.selected"
               :options="lang.variants"
@@ -42,7 +69,7 @@ onMounted(() => {
                   size="2xs"
                 />
               </template>
-            </USelectMenu>
+            </USelectMenu> -->
           </div>
         </div>
       </div>
